@@ -362,9 +362,6 @@ void main() {
         final rng = Random(19);
         const iterations = 50;
 
-        final db = await _openInMemoryDb();
-        final repo = PricingRepositoryImpl(_testHelper(db));
-
         for (var i = 0; i < iterations; i++) {
           // Use a fresh DB for each iteration to avoid name collisions.
           final iterDb = await _openInMemoryDb();
@@ -396,8 +393,6 @@ void main() {
 
           await iterDb.close();
         }
-
-        await db.close();
       },
     );
 
