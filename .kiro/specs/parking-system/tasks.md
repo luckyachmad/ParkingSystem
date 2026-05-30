@@ -340,7 +340,7 @@ Implement a Flutter/Dart mobile parking operations app backed by a local SQLite 
     - Logout; assert `Unauthenticated` state; assert `logout` audit event exists
     - _Test file: `test/integration/auth_flow_test.dart`_
 
-- [ ] 16. Final checkpoint — Ensure all tests pass
+- [x] 16. Final checkpoint — Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 

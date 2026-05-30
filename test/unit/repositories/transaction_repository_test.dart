@@ -584,7 +584,7 @@ void main() {
             const noMatchCount = 4;
 
             for (var t = 0; t < matchCount; t++) {
-              final plate = '${matchPrefix}${iter}_$t';
+              final plate = '$matchPrefix${iter}_$t';
               final ticketId = await _insertStubTicket(
                 db,
                 pricingRuleId: ruleId,
@@ -605,7 +605,7 @@ void main() {
             }
 
             for (var t = 0; t < noMatchCount; t++) {
-              final plate = '${noMatchPrefix}${iter}_$t';
+              final plate = '$noMatchPrefix${iter}_$t';
               final ticketId = await _insertStubTicket(
                 db,
                 pricingRuleId: ruleId,
@@ -642,7 +642,7 @@ void main() {
 
             // All matching plates must appear.
             for (var t = 0; t < matchCount; t++) {
-              final plate = '${matchPrefix}${iter}_$t';
+              final plate = '$matchPrefix${iter}_$t';
               expect(
                 results.any((r) => r.plateNumber == plate),
                 isTrue,
@@ -652,7 +652,7 @@ void main() {
 
             // No non-matching plates must appear.
             for (var t = 0; t < noMatchCount; t++) {
-              final plate = '${noMatchPrefix}${iter}_$t';
+              final plate = '$noMatchPrefix${iter}_$t';
               expect(
                 results.any((r) => r.plateNumber == plate),
                 isFalse,

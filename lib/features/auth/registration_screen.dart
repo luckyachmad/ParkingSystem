@@ -217,6 +217,9 @@ class _RegistrationFormState extends ConsumerState<_RegistrationForm> {
               if (value == null || value.trim().isEmpty) {
                 return 'Username is required';
               }
+              if (!RegExp(r'^[a-zA-Z0-9_]{3,50}$').hasMatch(value.trim())) {
+                return 'Username must be 3–50 characters: letters, digits, or underscores only';
+              }
               return null;
             },
           ),
@@ -254,6 +257,12 @@ class _RegistrationFormState extends ConsumerState<_RegistrationForm> {
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Password is required';
+              }
+              if (value.length < 8) {
+                return 'Password must be at least 8 characters';
+              }
+              if (value.length > 128) {
+                return 'Password must be 128 characters or fewer';
               }
               return null;
             },

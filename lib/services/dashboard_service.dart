@@ -18,12 +18,10 @@ class DashboardService {
   final UserRepository _userRepository;
 
   const DashboardService({
-    required TicketRepository ticketRepository,
-    required TransactionRepository transactionRepository,
-    required UserRepository userRepository,
-  })  : _ticketRepository = ticketRepository,
-        _transactionRepository = transactionRepository,
-        _userRepository = userRepository;
+    required this._ticketRepository,
+    required this._transactionRepository,
+    required this._userRepository,
+  });
 
   // ---------------------------------------------------------------------------
   // computeMetrics
